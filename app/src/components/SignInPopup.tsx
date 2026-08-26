@@ -40,9 +40,9 @@ export default function SignInPopup() {
           />
           <motion.div
             className={styles.popup}
-            initial={{ opacity: 0, y: 50, scale: 0.95 }}
-            animate={{ opacity: 1, y: 0, scale: 1 }}
-            exit={{ opacity: 0, scale: 0.95, y: 20 }}
+            initial={{ opacity: 0, x: "-50%", y: "-40%", scale: 0.95 }}
+            animate={{ opacity: 1, x: "-50%", y: "-50%", scale: 1 }}
+            exit={{ opacity: 0, x: "-50%", y: "-40%", scale: 0.95 }}
             transition={{ type: 'spring', damping: 25, stiffness: 300 }}
           >
             <button className={styles.closeBtn} onClick={handleDismiss} aria-label="Close popup">
