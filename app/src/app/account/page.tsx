@@ -3,6 +3,7 @@ import Footer from '@/components/Footer';
 import Image from 'next/image';
 import { User, Shield, Trophy, Settings, LogOut } from 'lucide-react';
 import Link from 'next/link';
+import styles from './Account.module.css';
 
 export default function AccountPage() {
   return (
@@ -11,7 +12,7 @@ export default function AccountPage() {
       <main className="bg-off-white" style={{ minHeight: '100vh', paddingTop: 'var(--nav-height)' }}>
         <div className="section-sm">
           <div className="container">
-            <div style={{ display: 'grid', gridTemplateColumns: '250px 1fr', gap: '32px' }}>
+            <div className={styles.layout}>
               
               {/* Sidebar */}
               <div className="card" style={{ padding: '24px', alignSelf: 'start' }}>
@@ -39,7 +40,7 @@ export default function AccountPage() {
                 
                 <div className="card" style={{ padding: '32px' }}>
                   <form style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
-                    <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '24px' }}>
+                    <div className={styles.formGrid}>
                       <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
                         <label style={{ fontSize: '0.85rem', fontWeight: 700, color: 'var(--text-secondary)' }}>Full Name</label>
                         <input type="text" className="input" defaultValue="Demo User" />
@@ -50,7 +51,7 @@ export default function AccountPage() {
                       </div>
                     </div>
                     
-                    <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '24px' }}>
+                    <div className={styles.formGrid}>
                       <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
                         <label style={{ fontSize: '0.85rem', fontWeight: 700, color: 'var(--text-secondary)' }}>Weight Class</label>
                         <select className="input select">
