@@ -1,0 +1,337 @@
+.container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #1f1f1f;
+  color: #e3e3e3;
+  font-family: 'Roboto', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  padding: 24px;
+}
+
+.modal {
+  background-color: #131314;
+  border-radius: 28px;
+  width: 100%;
+  max-width: 1040px;
+  min-height: 400px;
+  display: flex;
+  overflow: hidden;
+  box-sizing: border-box;
+  padding: 36px;
+  padding-bottom: 48px;
+}
+
+/* Two column layout */
+.leftCol, .rightCol {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.leftCol {
+  padding-right: 48px;
+}
+
+.rightCol {
+  padding-top: 16px;
+  padding-left: 24px;
+}
+
+/* Logo */
+.googleLogo {
+  width: 48px;
+  height: 48px;
+  margin-bottom: 16px;
+}
+
+.googleLogo svg {
+  width: 100%;
+  height: 100%;
+}
+
+/* Typography */
+.title {
+  font-size: 36px;
+  font-weight: 400;
+  color: #e3e3e3;
+  margin: 0 0 16px 0;
+  line-height: 1.2;
+}
+
+.subtitle {
+  font-size: 16px;
+  font-weight: 400;
+  color: #e3e3e3;
+  margin: 0;
+}
+
+/* Input styles */
+.inputGroup {
+  position: relative;
+  margin-bottom: 8px;
+  margin-top: 24px;
+}
+
+.input {
+  width: 100%;
+  padding: 16px;
+  background-color: transparent;
+  border: 1px solid #747775;
+  border-radius: 4px;
+  color: #e3e3e3;
+  font-size: 16px;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.input:focus {
+  border-color: #a8c7fa;
+  border-width: 2px;
+  padding: 15px; /* offset for border width */
+}
+
+.label {
+  position: absolute;
+  left: 16px;
+  top: 16px;
+  color: #c4c7c5;
+  font-size: 16px;
+  transition: 0.2s ease all;
+  pointer-events: none;
+  background-color: #131314;
+  padding: 0 4px;
+}
+
+.input:focus ~ .label,
+.input:not(:placeholder-shown) ~ .label {
+  top: -10px;
+  left: 12px;
+  font-size: 12px;
+  color: #a8c7fa;
+}
+
+.input:not(:focus):not(:placeholder-shown) ~ .label {
+  color: #c4c7c5;
+}
+
+.forgotLink {
+  color: #a8c7fa;
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+  display: inline-block;
+  margin-top: 8px;
+}
+
+.forgotLink:hover {
+  text-decoration: underline;
+}
+
+/* Guest text */
+.guestText {
+  color: #c4c7c5;
+  font-size: 14px;
+  line-height: 1.5;
+  margin-top: 48px;
+  margin-bottom: 48px;
+}
+
+.learnMore {
+  color: #a8c7fa;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.learnMore:hover {
+  text-decoration: underline;
+}
+
+/* Actions */
+.actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: auto;
+}
+
+.actionsRight {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: auto;
+}
+
+.btnText {
+  background: transparent;
+  border: none;
+  color: #a8c7fa;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 10px 16px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.btnText:hover {
+  background-color: rgba(168, 199, 250, 0.08);
+}
+
+.btnPrimary {
+  background-color: #a8c7fa;
+  color: #041e49;
+  border: none;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 10px 24px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background-color 0.2s, box-shadow 0.2s;
+}
+
+.btnPrimary:hover {
+  background-color: #b9d4ff;
+  box-shadow: 0 1px 3px 0 rgba(0,0,0,0.3);
+}
+
+/* Step 2 specific */
+.profilePill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid #747775;
+  border-radius: 16px;
+  padding: 4px 8px 4px 4px;
+  margin-top: 16px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.profilePill:hover {
+  background-color: rgba(255, 255, 255, 0.04);
+}
+
+.profileAvatar {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: #e3e3e3;
+  color: #131314;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.profileEmail {
+  font-size: 14px;
+  color: #e3e3e3;
+  font-weight: 500;
+}
+
+.profileDropdown {
+  color: #c4c7c5;
+}
+
+.verifyText {
+  font-size: 16px;
+  color: #e3e3e3;
+  margin-bottom: 24px;
+}
+
+.checkboxWrap {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.checkboxWrap label {
+  font-size: 14px;
+  color: #e3e3e3;
+  cursor: pointer;
+}
+
+.checkbox {
+  width: 18px;
+  height: 18px;
+  accent-color: #a8c7fa;
+  cursor: pointer;
+}
+
+/* Footer layout */
+.pageFooter {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 16px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12px;
+  color: #c4c7c5;
+  background-color: #1f1f1f;
+}
+
+.footerLinks {
+  display: flex;
+  gap: 24px;
+}
+
+.footerLinks a {
+  color: #c4c7c5;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 6px;
+  border-radius: 4px;
+}
+
+.footerLinks a:hover {
+  background-color: rgba(255, 255, 255, 0.04);
+}
+
+.langSelect {
+  background: transparent;
+  border: none;
+  color: #c4c7c5;
+  font-size: 12px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 6px;
+  border-radius: 4px;
+}
+
+.langSelect:hover {
+  background-color: rgba(255, 255, 255, 0.04);
+}
+
+@media (max-width: 768px) {
+  .modal {
+    flex-direction: column;
+    height: 100vh;
+    width: 100vw;
+    max-width: none;
+    border-radius: 0;
+    background-color: #1f1f1f;
+    padding: 24px;
+  }
+  
+  .leftCol {
+    padding-right: 0;
+    margin-bottom: 24px;
+  }
+  
+  .rightCol {
+    padding-left: 0;
+    padding-top: 0;
+    flex: 1;
+  }
+  
+  .container {
+    padding: 0;
+  }
+}

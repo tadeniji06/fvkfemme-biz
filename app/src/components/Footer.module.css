@@ -1,0 +1,258 @@
+.footer {
+  background: var(--black);
+  color: var(--white);
+}
+
+/* Ticker */
+.topBar {
+  background: var(--yellow);
+  padding: 10px 0;
+  overflow: hidden;
+}
+
+.ticker {
+  font-family: var(--font-heading);
+  font-size: 0.75rem;
+  font-weight: 900;
+  letter-spacing: 0.12em;
+  color: var(--black);
+  white-space: nowrap;
+  animation: ticker 20s linear infinite;
+}
+
+@keyframes ticker {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* Main */
+.main {
+  padding: 80px 0 60px;
+  border-bottom: 1px solid var(--black-border);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr 1.5fr;
+  gap: 48px;
+}
+
+/* Brand */
+.brand {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: fit-content;
+}
+
+.logoIcon {
+  width: 34px;
+  height: 34px;
+  background: var(--yellow);
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--black);
+  flex-shrink: 0;
+}
+
+.logoText {
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  font-weight: 900;
+  letter-spacing: -0.03em;
+  color: var(--white);
+}
+
+.logoAccent {
+  color: var(--yellow);
+}
+
+.tagline {
+  font-size: 0.875rem;
+  color: rgba(255, 255, 255, 0.5);
+  line-height: 1.7;
+  max-width: 280px;
+}
+
+.socials {
+  display: flex;
+  gap: 8px;
+}
+
+.socialLink {
+  width: 38px;
+  height: 38px;
+  border: 1px solid var(--black-border);
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255, 255, 255, 0.5);
+  transition: border-color var(--transition), color var(--transition), background var(--transition);
+}
+
+.socialLink:hover {
+  border-color: var(--yellow);
+  color: var(--yellow);
+  background: rgba(245, 200, 0, 0.05);
+}
+
+/* Link columns */
+.linkCol {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.colHeading {
+  font-family: var(--font-heading);
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.linkList {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.footerLink {
+  font-size: 0.875rem;
+  color: rgba(255, 255, 255, 0.65);
+  transition: color var(--transition);
+}
+
+.footerLink:hover {
+  color: var(--white);
+}
+
+/* Newsletter */
+.newsletter {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.newsletterText {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.5);
+  line-height: 1.6;
+}
+
+.newsletterForm {
+  display: flex;
+  gap: 0;
+  border: 1px solid var(--black-border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  transition: border-color var(--transition);
+}
+
+.newsletterForm:focus-within {
+  border-color: var(--yellow);
+}
+
+.emailInput {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  padding: 12px 16px;
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  color: var(--white);
+  min-width: 0;
+}
+
+.emailInput::placeholder {
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.subscribeBtn {
+  width: 46px;
+  flex-shrink: 0;
+  background: var(--yellow);
+  color: var(--black);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background var(--transition);
+  cursor: pointer;
+}
+
+.subscribeBtn:hover {
+  background: #FFD000;
+}
+
+/* Bottom */
+.bottom {
+  padding: 20px 0;
+}
+
+.bottomInner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.copyright {
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.35);
+}
+
+.legal {
+  display: flex;
+  gap: 24px;
+}
+
+.legalLink {
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.35);
+  transition: color var(--transition);
+}
+
+.legalLink:hover {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+@media (max-width: 1100px) {
+  .grid {
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 40px;
+  }
+  .brand {
+    grid-column: 1 / -1;
+    flex-direction: row;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 32px;
+  }
+  .tagline { max-width: 400px; }
+}
+
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+  }
+  .brand { flex-direction: column; }
+  .main { padding: 60px 0 40px; }
+}
+
+@media (max-width: 480px) {
+  .grid { grid-template-columns: 1fr; }
+  .bottomInner { flex-direction: column; align-items: flex-start; }
+  .legal { gap: 16px; flex-wrap: wrap; }
+}

@@ -1,0 +1,274 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  transition: box-shadow var(--transition), transform var(--transition), border-color var(--transition);
+  cursor: pointer;
+}
+
+.card:hover {
+  box-shadow: var(--shadow-xl);
+  transform: translateY(-4px);
+  border-color: var(--yellow);
+}
+
+/* Image */
+.imageWrap {
+  position: relative;
+  aspect-ratio: 4/3;
+  overflow: hidden;
+  background: var(--gray-200);
+}
+
+.image {
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.card:hover .image {
+  transform: scale(1.04);
+}
+
+.imageOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.5) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+.rankBadge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  background: var(--white);
+  border-radius: var(--radius-sm);
+  padding: 5px 10px;
+  font-family: var(--font-heading);
+  font-weight: 900;
+  font-size: 0.8rem;
+  color: var(--black);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+.rankNum {
+  letter-spacing: -0.02em;
+}
+
+.rankUp { color: #16A34A; }
+.rankDown { color: #DC2626; }
+.rankSame { color: var(--gray-400); }
+
+.tierBadge {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  padding: 4px 10px;
+  border-radius: var(--radius-full);
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.tierBronze { background: #8B5E3C; color: #fff; }
+.tierSilver { background: #6B6B6B; color: #fff; }
+.tierGold { background: #C9922A; color: #fff; }
+.tierElite { background: var(--black); color: var(--yellow); }
+
+/* Content */
+.content {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  flex: 1;
+}
+
+.header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.meta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 4px;
+}
+
+.flag {
+  font-size: 1rem;
+}
+
+.weightClass {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  background: var(--gray-100);
+  padding: 2px 8px;
+  border-radius: var(--radius-full);
+}
+
+.name {
+  font-family: var(--font-heading);
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: var(--black);
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+.nickname {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  font-style: italic;
+  margin-top: 2px;
+}
+
+/* Record */
+.record {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 14px;
+  background: var(--gray-100);
+  border-radius: var(--radius-md);
+}
+
+.recordItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+}
+
+.recordNum {
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  font-weight: 900;
+  color: var(--black);
+  line-height: 1;
+}
+
+.recordNum.loss {
+  color: #DC2626;
+}
+
+.recordLabel {
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-muted);
+}
+
+.recordDivider {
+  width: 1px;
+  height: 24px;
+  background: var(--border);
+}
+
+.recordSep {
+  flex: 1;
+}
+
+.gym {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+/* XP Bar */
+.xpSection {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.xpLabel {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--text-muted);
+}
+
+.xpTrack {
+  width: 100%;
+  height: 5px;
+  background: var(--gray-200);
+  border-radius: var(--radius-full);
+  overflow: hidden;
+}
+
+.xpFill {
+  height: 100%;
+  background: var(--yellow);
+  border-radius: var(--radius-full);
+  transition: width 1s ease;
+}
+
+/* Achievements */
+.achievements {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.achBadge {
+  width: 28px;
+  height: 28px;
+  background: var(--yellow-light);
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #7A6200;
+  transition: background var(--transition), transform var(--transition);
+}
+
+.achBadge:hover {
+  background: var(--yellow);
+  color: var(--black);
+  transform: scale(1.1);
+}
+
+.achMore {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  padding: 0 4px;
+}
+
+/* Compact variant */
+.compact .imageWrap {
+  aspect-ratio: 3/2;
+}
+
+.compact .content {
+  padding: 16px;
+  gap: 10px;
+}
+
+.compact .name {
+  font-size: 1rem;
+}
+
+/* Featured variant */
+.featured {
+  border-color: var(--yellow);
+  box-shadow: 0 0 0 2px var(--yellow);
+}
+
+.featured .imageWrap {
+  aspect-ratio: 16/9;
+}

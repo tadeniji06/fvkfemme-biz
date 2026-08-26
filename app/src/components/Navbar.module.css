@@ -1,0 +1,346 @@
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  height: auto;
+  transition: background var(--transition), border-color var(--transition), box-shadow var(--transition);
+}
+
+/* Top Bar */
+.topBar {
+  background: var(--black);
+  padding: 6px 0;
+  color: var(--white);
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.topBarInner {
+  max-width: var(--container-wide);
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.contactInfo {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.contactLink, .contactText {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: rgba(255, 255, 255, 0.7);
+  transition: color var(--transition);
+}
+
+.contactLink:hover {
+  color: var(--yellow);
+}
+
+.contactDivider {
+  color: rgba(255, 255, 255, 0.2);
+}
+
+.transparent {
+  background: transparent;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.scrolled {
+  background: var(--white);
+  border-bottom: 1px solid var(--border);
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.06);
+}
+
+.inner {
+  max-width: var(--container-wide);
+  margin: 0 auto;
+  padding: 0 24px;
+  height: var(--nav-height);
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+/* Logo */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.logoIcon {
+  width: 34px;
+  height: 34px;
+  background: var(--yellow);
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--black);
+  flex-shrink: 0;
+  transition: transform var(--transition);
+}
+
+.logo:hover .logoIcon {
+  transform: rotate(-6deg);
+}
+
+.logoText {
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  font-weight: 900;
+  letter-spacing: -0.03em;
+  color: var(--black);
+  transition: color var(--transition);
+}
+
+.transparent .logoText {
+  color: var(--white);
+}
+
+.transparent .logoIcon {
+  background: var(--yellow);
+}
+
+.logoAccent {
+  color: var(--yellow);
+}
+
+.transparent .logoAccent {
+  color: var(--yellow);
+}
+
+/* Nav Links */
+.links {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-left: 8px;
+  flex: 1;
+}
+
+.link {
+  padding: 8px 14px;
+  border-radius: var(--radius-md);
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  transition: color var(--transition), background var(--transition);
+  position: relative;
+}
+
+.link::after {
+  content: '';
+  position: absolute;
+  bottom: 2px;
+  left: 14px;
+  right: 14px;
+  height: 2px;
+  background: var(--yellow);
+  border-radius: var(--radius-full);
+  transform: scaleX(0);
+  transition: transform var(--transition);
+}
+
+.link:hover {
+  color: var(--black);
+  background: var(--gray-100);
+}
+
+.link:hover::after {
+  transform: scaleX(1);
+}
+
+.linkActive {
+  color: var(--black);
+  font-weight: 700;
+}
+
+.linkActive::after {
+  transform: scaleX(1);
+}
+
+.transparent .link {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.transparent .link:hover {
+  color: var(--white);
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.transparent .linkActive {
+  color: var(--white);
+}
+
+/* Actions */
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-left: auto;
+  flex-shrink: 0;
+}
+
+.accountBtn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  border-radius: var(--radius-md);
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  transition: background var(--transition), color var(--transition);
+}
+
+.accountBtn:hover {
+  background: var(--gray-100);
+  color: var(--black);
+}
+
+.transparent .accountBtn {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.transparent .accountBtn:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--white);
+}
+
+/* Mobile toggle */
+.menuToggle {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-md);
+  color: var(--black);
+  transition: background var(--transition), color var(--transition);
+  margin-left: auto;
+}
+
+.menuToggle:hover {
+  background: var(--gray-100);
+}
+
+.transparent .menuToggle {
+  color: var(--white);
+}
+
+.transparent .menuToggle:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* Mobile Menu */
+.mobileMenu {
+  display: none;
+  position: fixed;
+  top: var(--nav-height);
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--white);
+  z-index: 999;
+  transform: translateY(-100%);
+  transition: transform var(--transition-slow);
+  overflow-y: auto;
+}
+
+.mobileMenuOpen {
+  transform: translateY(0);
+}
+
+.mobileInner {
+  padding: 32px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.mobileLinks {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.mobileLink {
+  display: block;
+  padding: 14px 16px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  font-family: var(--font-heading);
+  color: var(--text-secondary);
+  border-radius: var(--radius-md);
+  transition: background var(--transition), color var(--transition);
+  border-left: 3px solid transparent;
+}
+
+.mobileLink:hover {
+  background: var(--gray-100);
+  color: var(--black);
+}
+
+.mobileLinkActive {
+  color: var(--black);
+  border-left-color: var(--yellow);
+  background: var(--yellow-light);
+}
+
+.mobileCtas {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding-top: 16px;
+  border-top: 1px solid var(--border);
+}
+
+.mobileAccountBtn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 16px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  border-radius: var(--radius-md);
+  border: 2px solid var(--border);
+  transition: background var(--transition), color var(--transition);
+}
+
+.mobileAccountBtn:hover {
+  background: var(--gray-100);
+  color: var(--black);
+}
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 998;
+  backdrop-filter: blur(2px);
+}
+
+@media (max-width: 900px) {
+  .links,
+  .actions {
+    display: none;
+  }
+
+  .menuToggle {
+    display: flex;
+  }
+
+  .mobileMenu {
+    display: block;
+  }
+}
