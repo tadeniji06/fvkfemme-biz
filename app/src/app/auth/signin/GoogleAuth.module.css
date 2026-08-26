@@ -312,12 +312,14 @@
 @media (max-width: 768px) {
   .modal {
     flex-direction: column;
-    height: 100vh;
+    min-height: 100dvh;
+    height: auto;
     width: 100vw;
     max-width: none;
     border-radius: 0;
     background-color: #1f1f1f;
     padding: 24px;
+    padding-bottom: 80px; /* Space for static footer if needed */
   }
   
   .leftCol {
@@ -333,5 +335,16 @@
   
   .container {
     padding: 0;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+  }
+
+  .pageFooter {
+    position: static;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 16px;
+    padding: 24px;
   }
 }
